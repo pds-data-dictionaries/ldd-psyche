@@ -1,0 +1,127 @@
+PDS4 Local Data Dictionary Processing Report
+
+Configuration:
+   LDDTool Version        15.1.0
+   LDD Version Id:        1.0.0.0
+   LDD Label Version Id:  1.23
+   LDD Discipline (T/F):  false
+   LDD Namespace URL:     http://pds.nasa.gov/pds4/
+   LDD URN Prefix:        urn:nasa:pds:
+   Time                   Fri Jun 21 17:17:48 UTC 2024
+   Common Schema          [PDS4_PDS_1H00.xsd]
+   Common Schematron      [PDS4_PDS_1H00.sch]
+   IM Version Id:         1.17.0.0
+   IM Namespace Id:       pds
+   IM Label Version Id:   1.23
+   IM Object Model        [UpperModel.pont]
+   IM Data Dictionary     [dd11179.pins]
+   IM Glossary            [Glossary.pins]
+   IM Document Spec       [DMDocument.pins]
+
+Parameters:
+   Input File             [/home/runner/work/ldd-psyche/ldd-psyche/src/PDS4_PSYCHE_IngestLDD.xml]
+   PDS Processing         true
+   LDD Processing         true
+   Discipline LDD         false
+   Mission LDD            true
+   Write Attr Elements    false
+   Merge with Master      false
+
+Summary:
+   Classes                2
+   Attributes             5
+   Associations           6
+   Error messages         0
+   Warning messages       0
+   Information messages   0
+
+Detailed validation messages
+
+Parsed Input - Header:
+   LDD Name               Psyche Mission LDD
+   LDD Version            1.0.0.0
+   Full Name              Ernest Cisneros
+   Steward                ernestcisneros
+   Namespace Id           psyche
+   Comment                _TBD_Ingest_LDD
+   Last Modification Time 2023-05-23T13:00:00Z
+   PDS4 Merge Flag        false
+
+Parsed Input - Attributes:
+
+   name                   mission_phase_name
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The Psyche Mission phase name.
+
+   name                   orbit_number
+   version                1.17
+   value data type        ASCII_Integer
+   description            This value denotes the orbit number during orbital operations.
+
+   name                   spacecraft_clock_start_corrected
+   version                1.17
+   value data type        ASCII_Real
+   description            This value denotes the observation spacecraft clock start (SCLK) recorded, corrected for any clock updates.
+   unit of measure type   Units_of_Time
+
+   name                   spacecraft_clock_stop_corrected
+   version                1.17
+   value data type        ASCII_Real
+   description            This value denotes the observation spacecraft clock stop (SCLK) recorded, corrected for an clock updates.
+   unit of measure type   Units_of_Time
+
+   name                   spacecraft_fsw_dictionary_version
+   version                1.17
+   value data type        ASCII_Integer
+   description            This value denotes the version of the spacecraft fsw dictionary in use.
+
+Parsed Input - Classes:
+
+   name                   Psyche_Parameters
+   description            Class for Psyche related values.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      psyche.Observation_Information
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        component_of
+
+   name                   Observation_Information
+   description            The Psyche observation information class and attributes pertaining to an observation.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      psyche.Observation_Information.mission_phase_name
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      psyche.Observation_Information.orbit_number
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      psyche.Observation_Information.spacecraft_clock_start_corrected
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      psyche.Observation_Information.spacecraft_clock_stop_corrected
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      psyche.Observation_Information.spacecraft_fsw_dictionary_version
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+End of Report

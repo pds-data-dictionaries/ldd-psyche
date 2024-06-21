@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- PDS4 XML/Schema for Name Space Id:psyche  Version:1.0.0.0 - Fri Jun 21 17:17:48 UTC 2024 -->
+  <!-- Generated from the PDS4 Information Model Version 1.17.0.0 - System Build 12.0 -->
+  <!-- *** This PDS4 product schema is an operational deliverable. *** -->
+  <!--                                                                           -->
+  <!--               Dictionary Stack                                            -->
+  <!-- 1.17.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.0.0.0 - psyche: - Psyche Mission LDD                                    -->
+  <!--                                                                           -->
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://pds.nasa.gov/pds4/mission/psyche/v1"
+    xmlns:psyche="http://pds.nasa.gov/pds4/mission/psyche/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="1.0.0.0">
+ 
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd"/>
+ 
+  <xs:annotation>
+    <xs:documentation>
+_TBD_Ingest_LDD
+    </xs:documentation>
+  </xs:annotation>
+ 
+  <xs:element name="Psyche_Parameters" type="psyche:Psyche_Parameters"> </xs:element>
+
+  <xs:complexType name="Observation_Information">
+    <xs:annotation>
+      <xs:documentation>The Psyche observation information class and
+        attributes pertaining to an observation.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="mission_phase_name" type="psyche:mission_phase_name" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="orbit_number" type="psyche:orbit_number" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_start_corrected" type="psyche:spacecraft_clock_start_corrected" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_stop_corrected" type="psyche:spacecraft_clock_stop_corrected" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_fsw_dictionary_version" type="psyche:spacecraft_fsw_dictionary_version" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="psyche:mission_phase_name = ('approach', 'atlo', 'cruise_1', 'cruise_2', 'ico', 'launch', 'mga', 'orbit_a', 'orbit_b1', 'orbit_b2', 'orbit_c', 'orbit_d', 'orbit_transfer_a_to_b1', 'orbit_transfer_b1_to_d', 'orbit_transfer_c_to_b2', 'orbit_transfer_d_to_c', 'orbital_operations', 'preflight', 'test')"/> -->
+    <!-- <xs:assert test="psyche:spacecraft_fsw_dictionary_version = ('5_4_2_1', '5_4_2_2')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Psyche_Parameters">
+    <xs:annotation>
+      <xs:documentation>Class for Psyche related
+        values.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Observation_Information" type="psyche:Observation_Information" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+    <xs:annotation>
+      <xs:documentation>This section contains the simpleTypes that provide more constraints
+        than those at the base data type level. The simpleTypes defined here build on the base data
+        types. This is another component of the common dictionary and therefore falls within the
+        common namespace.
+      </xs:documentation>
+    </xs:annotation>
+
+  <xs:simpleType name="mission_phase_name">
+    <xs:annotation>
+<xs:documentation>The Psyche Mission phase name.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="orbit_number">
+    <xs:annotation>
+      <xs:documentation>This value denotes the orbit number during
+        orbital operations.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_start_corrected_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="spacecraft_clock_start_corrected">
+    <xs:annotation>
+      <xs:documentation>This value denotes the observation spacecraft
+        clock start (SCLK) recorded, corrected for any clock
+        updates.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="psyche:spacecraft_clock_start_corrected_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="spacecraft_clock_stop_corrected_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="spacecraft_clock_stop_corrected">
+    <xs:annotation>
+      <xs:documentation>This value denotes the observation spacecraft
+        clock stop (SCLK) recorded, corrected for an clock
+        updates.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="psyche:spacecraft_clock_stop_corrected_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="spacecraft_fsw_dictionary_version">
+    <xs:annotation>
+      <xs:documentation>This value denotes the version of the spacecraft
+        fsw dictionary in use.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
