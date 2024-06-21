@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.sch"
+  schematypens="http://purl.oclc.org/dsdl/schematron"?>
+  <?xml-model href="https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1H00_1510.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+  <Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:psyche="http://pds.nasa.gov/pds4/mission/psyche/v1" 
+  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd">
+    
+  <name>Psyche Mission LDD</name>
+    <ldd_version_id>1.0.0.0</ldd_version_id>
+    <dictionary_type>Mission</dictionary_type>
+    <full_name>Ernest Cisneros</full_name>
+    <steward_id>ernestcisneros</steward_id>
+    <namespace_id>psyche</namespace_id>
+    <last_modification_date_time>2023-05-23T13:00:00Z</last_modification_date_time>
+    
+    <DD_Attribute>
+        <name>mission_phase_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psyche.Observation_Information.mission_phase_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Ernest Cisneros</submitter_name>
+        <definition>The Psyche Mission phase name.</definition>
+        
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>test</value>
+                <value_meaning>The Psyche mission phase used for general testing purposes.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>preflight</value>
+                <value_meaning>The Psyche mission phase usef for preflight operations.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>atlo</value>
+                <value_meaning>The Psyche mission phase used for ATLO.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>launch</value>
+                <value_meaning>The Psyche mission phase used for spacecraft launch.</value_meaning>
+            </DD_Permissible_Value> 
+            <DD_Permissible_Value>
+                <value>ico</value>
+                <value_meaning>The Psyche mission phase used for the initial checkout (ICO), lasting 100 days.</value_meaning>
+            </DD_Permissible_Value>           
+            <DD_Permissible_Value>
+                <value>cruise_1</value>
+                <value_meaning>The Psyche mission phase used for the cruise 1 period, lasting 26 months.</value_meaning>
+            </DD_Permissible_Value>           
+            <DD_Permissible_Value>
+                <value>mga</value>
+                <value_meaning>The Psyche mission phase used for the Mars gravity assist, lasting 62 days.</value_meaning>
+            </DD_Permissible_Value>           
+            <DD_Permissible_Value>
+                <value>cruise_2</value>
+                <value_meaning>The Psyche mission phase used for the cruise 2 period, lasting 36 months.</value_meaning>
+            </DD_Permissible_Value>           
+            <DD_Permissible_Value>
+                <value>approach</value>
+                <value_meaning>The Psyche mission phase used for the approach to 16 Psyche, last 100 days.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>orbital_operations</value>
+                <value_meaning>The Psyche mission phase used for the entire orbital operations period, lasting 26 months.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>orbit_a</value>
+                <value_meaning>The Psyche mission phase used for orbit A operations, lasting 56 days.</value_meaning>
+            </DD_Permissible_Value>           
+            <DD_Permissible_Value>
+                <value>orbit_b1</value>
+                <value_meaning>The Psyche mission phase used for orbit B1 operations, lasting 92 days.</value_meaning>
+            </DD_Permissible_Value>           
+            <DD_Permissible_Value>
+                <value>orbit_b2</value>
+                <value_meaning>The Psyche mission phase used for orbit B2 operations, lasting 100 days.</value_meaning>
+            </DD_Permissible_Value>           
+            <DD_Permissible_Value>
+                <value>orbit_c</value>
+                <value_meaning>The Psyche mission phase used for orbit C operations, lasting 100 days.</value_meaning>
+            </DD_Permissible_Value>           
+            <DD_Permissible_Value>
+                <value>orbit_d</value>
+                <value_meaning>The Psyche mission phase used for orbit D operations, lasting 100 days.</value_meaning>
+            </DD_Permissible_Value>           
+            <DD_Permissible_Value>
+                <value>orbit_transfer_a_to_b1</value>
+                <value_meaning>The Psyche mission phase used for orbit transfer A-to-B1, lasting 17 days.</value_meaning>
+            </DD_Permissible_Value>           
+            <DD_Permissible_Value>
+                <value>orbit_transfer_b1_to_d</value>
+                <value_meaning>The Psyche mission phase used for orbit transfer B1-to-D, lasting 98 days.</value_meaning>
+            </DD_Permissible_Value>           
+            <DD_Permissible_Value>
+                <value>orbit_transfer_d_to_c</value>
+                <value_meaning>The Psyche mission phase used for orbit transfer D-to-C, lasting 90 days.</value_meaning>
+            </DD_Permissible_Value>           
+            <DD_Permissible_Value>
+                <value>orbit_transfer_c_to_b2</value>
+                <value_meaning>The Psyche mission phase used for orbit transfer C-to-B2, lasting 23 days.</value_meaning>
+            </DD_Permissible_Value>                   
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>orbit_number</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psyche.Observation_Information.orbit_number</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Ernest Cisneros</submitter_name>
+        <definition>This value denotes the orbit number during orbital operations.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+
+    <DD_Attribute>
+        <name>spacecraft_clock_start_corrected</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psyche.Observation_Information.spacecraft_clock_start_corrected</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Ernest Cisneros</submitter_name>
+        <definition>This value denotes the observation spacecraft clock start (SCLK) recorded, corrected for any clock updates.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>spacecraft_clock_stop_corrected</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psyche.Observation_Information.spacecraft_clock_stop_corrected</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Ernest Cisneros</submitter_name>
+        <definition>This value denotes the observation spacecraft clock stop (SCLK) recorded, corrected for an clock updates.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+
+    <DD_Attribute>
+        <name>spacecraft_fsw_dictionary_version</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psyche.Observation_Information.spacecraft_fsw_dictionary_version</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Ernest Cisneros</submitter_name>
+        <definition>This value denotes the version of the spacecraft fsw dictionary in use.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <DD_Permissible_Value>
+                <value>5_4_2_1</value>
+                <value_meaning>Version 5.4.2.1 of the Psyche FSW dictionary.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>5_4_2_2</value>
+                <value_meaning>Version 5.4.2.2 of the Psyche FSW dictionary.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+
+
+    <DD_Class>
+        <name>Psyche_Parameters</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psyche.Psyche_Parameters</local_identifier>
+        <submitter_name>Ernest Cisneros</submitter_name>
+        <definition>Class for Psyche related values.</definition>
+        <element_flag>true</element_flag>
+        <DD_Association>
+            <identifier_reference>psyche.Observation_Information</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>   
+
+    <DD_Class>
+        <name>Observation_Information</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Observation_Information</local_identifier>
+        <submitter_name>Ernest Cisneros</submitter_name>
+        <definition>The Psyche observation information class and attributes pertaining to an observation.</definition>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>psyche.Observation_Information.mission_phase_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+
+        <DD_Association>
+            <identifier_reference>psyche.Observation_Information.orbit_number</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+
+
+        <DD_Association>
+            <identifier_reference>psyche.Observation_Information.spacecraft_clock_start_corrected</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+
+        <DD_Association>
+            <identifier_reference>psyche.Observation_Information.spacecraft_clock_stop_corrected</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+
+
+        <DD_Association>
+            <identifier_reference>psyche.Observation_Information.spacecraft_fsw_dictionary_version</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+
+    </DD_Class>
+</Ingest_LDD>
