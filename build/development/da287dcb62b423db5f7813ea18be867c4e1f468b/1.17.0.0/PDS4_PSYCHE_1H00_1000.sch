@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:psyche  Version:1.0.0.0 - Mon Jun 24 18:52:10 UTC 2024 -->
+  <!-- PDS4 Schematron for Name Space Id:psyche  Version:1.0.0.0 - Mon Jun 24 18:57:57 UTC 2024 -->
   <!-- Generated from the PDS4 Information Model Version 1.17.0.0 - System Build 12.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
