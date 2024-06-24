@@ -240,7 +240,6 @@
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-
     <DD_Class>
         <name>Psyche_Parameters</name>
         <version_id>1.0</version_id>
