@@ -119,6 +119,44 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+    <DD_Attribute>
+        <name>release_number</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psyche.Observation_Information.release_number</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Ernest Cisneros</submitter_name>
+        <definition>This value denotes the release number when a product was published.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    <DD_Attribute>
+        <name>spacecraft_clock_start</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psyche.Observation_Information.spacecraft_clock_start</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Ernest Cisneros</submitter_name>
+        <definition>This value denotes the observation spacecraft clock start (SCLK) recorded.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    <DD_Attribute>
+        <name>spacecraft_clock_stop</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psyche.Observation_Information.spacecraft_clock_stop</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Ernest Cisneros</submitter_name>
+        <definition>This value denotes the observation spacecraft clock stop (SCLK) recorded.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
 
     <DD_Attribute>
         <name>spacecraft_clock_start_corrected</name>
@@ -148,6 +186,18 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+    <DD_Attribute>
+        <name>spacecraft_clock_partition</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psyche.Observation_Information.spacecraft_clock_partition</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Ernest Cisneros</submitter_name>
+        <definition>This value denotes the spacecraft clock partition, tracking any clock resets.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
 
     <DD_Attribute>
         <name>spacecraft_fsw_dictionary_version</name>
@@ -170,7 +220,26 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
-
+    <DD_Attribute>
+        <name>spacecraft_active_flight_computer</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psyche.Observation_Information.spacecraft_active_flight_computer</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Ernest Cisneros</submitter_name>
+        <definition>This value denotes the spacecraft pce active and in use.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>A</value>
+                <value_meaning>The Psyche spacecraft active pce A.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>B</value>
+                <value_meaning>The Psyche spacecraft active pce B.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
 
     <DD_Class>
         <name>Psyche_Parameters</name>
@@ -180,56 +249,64 @@
         <definition>Class for Psyche related values.</definition>
         <element_flag>true</element_flag>
         <DD_Association>
-            <identifier_reference>psyche.Observation_Information</identifier_reference>
-            <reference_type>component_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>   
-
-    <DD_Class>
-        <name>Observation_Information</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Observation_Information</local_identifier>
-        <submitter_name>Ernest Cisneros</submitter_name>
-        <definition>The Psyche observation information class and attributes pertaining to an observation.</definition>
-        <element_flag>false</element_flag>
-        <DD_Association>
             <identifier_reference>psyche.Observation_Information.mission_phase_name</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-
         <DD_Association>
             <identifier_reference>psyche.Observation_Information.orbit_number</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-
-
+        <DD_Association>
+            <identifier_reference>psyche.Observation_Information.release_number</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>psyche.Observation_Information.spacecraft_clock_start</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>psyche.Observation_Information.spacecraft_clock_stop</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
         <DD_Association>
             <identifier_reference>psyche.Observation_Information.spacecraft_clock_start_corrected</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-
         <DD_Association>
             <identifier_reference>psyche.Observation_Information.spacecraft_clock_stop_corrected</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-
-
+        <DD_Association>
+            <identifier_reference>psyche.Observation_Information.spacecraft_clock_partition</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
         <DD_Association>
             <identifier_reference>psyche.Observation_Information.spacecraft_fsw_dictionary_version</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-
+        <DD_Association>
+            <identifier_reference>psyche.Observation_Information.spacecraft_active_flight_computer</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
     </DD_Class>
 </Ingest_LDD>
