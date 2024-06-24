@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Fri Jun 21 17:17:48 UTC 2024
+   Time                   Mon Jun 24 18:57:57 UTC 2024
    Common Schema          [PDS4_PDS_1H00.xsd]
    Common Schematron      [PDS4_PDS_1H00.sch]
    IM Version Id:         1.17.0.0
@@ -28,9 +28,9 @@ Parameters:
    Merge with Master      false
 
 Summary:
-   Classes                2
-   Attributes             5
-   Associations           6
+   Classes                1
+   Attributes             10
+   Associations           10
    Error messages         0
    Warning messages       0
    Information messages   0
@@ -59,6 +59,23 @@ Parsed Input - Attributes:
    value data type        ASCII_Integer
    description            This value denotes the orbit number during orbital operations.
 
+   name                   release_number
+   version                1.17
+   value data type        ASCII_Integer
+   description            This value denotes the release number when a product was published.
+
+   name                   spacecraft_clock_start
+   version                1.17
+   value data type        ASCII_Real
+   description            This value denotes the observation spacecraft clock start (SCLK) recorded.
+   unit of measure type   Units_of_Time
+
+   name                   spacecraft_clock_stop
+   version                1.17
+   value data type        ASCII_Real
+   description            This value denotes the observation spacecraft clock stop (SCLK) recorded.
+   unit of measure type   Units_of_Time
+
    name                   spacecraft_clock_start_corrected
    version                1.17
    value data type        ASCII_Real
@@ -71,28 +88,25 @@ Parsed Input - Attributes:
    description            This value denotes the observation spacecraft clock stop (SCLK) recorded, corrected for an clock updates.
    unit of measure type   Units_of_Time
 
+   name                   spacecraft_clock_partition
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            This value denotes the spacecraft clock partition, tracking any clock resets.
+
    name                   spacecraft_fsw_dictionary_version
    version                1.17
    value data type        ASCII_Integer
    description            This value denotes the version of the spacecraft fsw dictionary in use.
 
+   name                   spacecraft_active_flight_computer
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            This value denotes the spacecraft pce active and in use.
+
 Parsed Input - Classes:
 
    name                   Psyche_Parameters
    description            Class for Psyche related values.
-   is abstract            false
-   is choice              false
-   subclass of            USER
-
-   Associations
-
-      local identifier      psyche.Observation_Information
-      minimum occurrences   1
-      maximum occurrences   1
-      reference type        component_of
-
-   name                   Observation_Information
-   description            The Psyche observation information class and attributes pertaining to an observation.
    is abstract            false
    is choice              false
    subclass of            USER
@@ -109,6 +123,21 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
+      local identifier      psyche.Observation_Information.release_number
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      psyche.Observation_Information.spacecraft_clock_start
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      psyche.Observation_Information.spacecraft_clock_stop
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
       local identifier      psyche.Observation_Information.spacecraft_clock_start_corrected
       minimum occurrences   0
       maximum occurrences   1
@@ -119,7 +148,17 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
+      local identifier      psyche.Observation_Information.spacecraft_clock_partition
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
       local identifier      psyche.Observation_Information.spacecraft_fsw_dictionary_version
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      psyche.Observation_Information.spacecraft_active_flight_computer
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
