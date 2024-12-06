@@ -14,7 +14,7 @@
     <full_name>Ernest Cisneros</full_name>
     <steward_id>ernestcisneros</steward_id>
     <namespace_id>psyche</namespace_id>
-    <last_modification_date_time>2023-05-23T13:00:00Z</last_modification_date_time>
+    <last_modification_date_time>2024-12-06T05:46:13Z</last_modification_date_time>
     
     <DD_Attribute>
         <name>mission_phase_name</name>
@@ -140,8 +140,11 @@
         <definition>This value denotes the observation spacecraft clock start (SCLK) recorded.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <formation_rule>[p/]dddddddddd[.fffffffff] - The spacecraft clock value is an integer with no more than 10 digits, optionally preceded by a clock partition number and forward slash, and optionally followed by a fractional value. If the fractional value is present, it must be separated from the whole number by a period, and may have up to 9 digits. If a partition number and slash are not present, then the attribute spacecraft_clock_partition must be used.</formation_rule>
+            <minimum_characters>1</minimum_characters>
+            <maximum_characters>19</maximum_characters>
+            <pattern>([1-9]/)?[0-9]{1,10}(\.[0-9]{1,9})?</pattern>
         </DD_Value_Domain>
     </DD_Attribute>
     <DD_Attribute>
@@ -153,8 +156,11 @@
         <definition>This value denotes the observation spacecraft clock stop (SCLK) recorded.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <formation_rule>[p/]dddddddddd[.fffffffff] - The spacecraft clock value is an integer with no more than 10 digits, optionally preceded by a clock partition number and forward slash, and optionally followed by a fractional value. If the fractional value is present, it must be separated from the whole number by a period, and may have up to 9 digits. If a partition number and slash are not present, then the attribute spacecraft_clock_partition must be used.</formation_rule>
+            <minimum_characters>1</minimum_characters>
+            <maximum_characters>19</maximum_characters>
+            <pattern>([1-9]/)?[0-9]{1,10}(\.[0-9]{1,9})?</pattern>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -167,8 +173,11 @@
         <definition>This value denotes the observation spacecraft clock start (SCLK) recorded, corrected for any clock updates.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <formation_rule>[p/]dddddddddd[.fffffffff] - The spacecraft clock value is an integer with no more than 10 digits, optionally preceded by a clock partition number and forward slash, and optionally followed by a fractional value. If the fractional value is present, it must be separated from the whole number by a period, and may have up to 9 digits. If a partition number and slash are not present, then the attribute spacecraft_clock_partition must be used.</formation_rule>
+            <minimum_characters>1</minimum_characters>
+            <maximum_characters>19</maximum_characters>
+            <pattern>([1-9]/)?[0-9]{1,10}(\.[0-9]{1,9})?</pattern>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -181,8 +190,11 @@
         <definition>This value denotes the observation spacecraft clock stop (SCLK) recorded, corrected for an clock updates.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <formation_rule>[p/]dddddddddd[.fffffffff] - The spacecraft clock value is an integer with no more than 10 digits, optionally preceded by a clock partition number and forward slash, and optionally followed by a fractional value. If the fractional value is present, it must be separated from the whole number by a period, and may have up to 9 digits. If a partition number and slash are not present, then the attribute spacecraft_clock_partition must be used.</formation_rule>
+            <minimum_characters>1</minimum_characters>
+            <maximum_characters>19</maximum_characters>
+            <pattern>([1-9]/)?[0-9]{1,10}(\.[0-9]{1,9})?</pattern>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -208,7 +220,7 @@
         <definition>This value denotes the version of the spacecraft fsw dictionary in use.</definition>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
-            <value_data_type>ASCII_Integer</value_data_type>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
             <DD_Permissible_Value>
                 <value>5_4_2_1</value>
                 <value_meaning>Version 5.4.2.1 of the Psyche FSW dictionary.</value_meaning>
