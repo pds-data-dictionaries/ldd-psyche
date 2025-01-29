@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.sch"
   schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd">
-    <name>Psyche Mission LDD</name>
+  <?xml-model href="https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1H00_1510.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+  <Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:psyche="http://pds.nasa.gov/pds4/mission/psyche/v1" 
+  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd">
+    
+  <name>Psyche Mission LDD</name>
     <ldd_version_id>1.0.0.0</ldd_version_id>
     <dictionary_type>Mission</dictionary_type>
     <full_name>Ernest Cisneros</full_name>
     <steward_id>ernestcisneros</steward_id>
     <namespace_id>psyche</namespace_id>
-    <last_modification_date_time>2023-05-23T13:00:00Z</last_modification_date_time>
+    <last_modification_date_time>2025-01-29T19:28:59Z</last_modification_date_time>
+    
+    <!-- begin class definitions and associated attributes statements -->
     <DD_Attribute>
         <name>mission_phase_name</name>
         <version_id>1.0</version_id>
@@ -16,6 +24,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Ernest Cisneros</submitter_name>
         <definition>The Psyche Mission phase name.</definition>
+        
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -97,6 +106,7 @@
             </DD_Permissible_Value>                   
         </DD_Value_Domain>
     </DD_Attribute>
+
     <DD_Attribute>
         <name>orbit_number</name>
         <version_id>1.0</version_id>
@@ -109,6 +119,7 @@
             <value_data_type>ASCII_Integer</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
+
     <DD_Attribute>
         <name>release_number</name>
         <version_id>1.0</version_id>
@@ -130,8 +141,11 @@
         <definition>This value denotes the observation spacecraft clock start (SCLK) recorded.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <formation_rule>[p/]dddddddddd[.fffffffff] - The spacecraft clock value is an integer with no more than 10 digits, optionally preceded by a clock partition number and forward slash, and optionally followed by a fractional value. If the fractional value is present, it must be separated from the whole number by a period, and may have up to 9 digits. If a partition number and slash are not present, then the attribute spacecraft_clock_partition must be used.</formation_rule>
+            <minimum_characters>1</minimum_characters>
+            <maximum_characters>19</maximum_characters>
+            <pattern>([1-9]/)?[0-9]{1,10}(\.[0-9]{1,9})?</pattern>
         </DD_Value_Domain>
     </DD_Attribute>
     <DD_Attribute>
@@ -143,10 +157,14 @@
         <definition>This value denotes the observation spacecraft clock stop (SCLK) recorded.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <formation_rule>[p/]dddddddddd[.fffffffff] - The spacecraft clock value is an integer with no more than 10 digits, optionally preceded by a clock partition number and forward slash, and optionally followed by a fractional value. If the fractional value is present, it must be separated from the whole number by a period, and may have up to 9 digits. If a partition number and slash are not present, then the attribute spacecraft_clock_partition must be used.</formation_rule>
+            <minimum_characters>1</minimum_characters>
+            <maximum_characters>19</maximum_characters>
+            <pattern>([1-9]/)?[0-9]{1,10}(\.[0-9]{1,9})?</pattern>
         </DD_Value_Domain>
     </DD_Attribute>
+
     <DD_Attribute>
         <name>spacecraft_clock_start_corrected</name>
         <version_id>1.0</version_id>
@@ -156,10 +174,14 @@
         <definition>This value denotes the observation spacecraft clock start (SCLK) recorded, corrected for any clock updates.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <formation_rule>[p/]dddddddddd[.fffffffff] - The spacecraft clock value is an integer with no more than 10 digits, optionally preceded by a clock partition number and forward slash, and optionally followed by a fractional value. If the fractional value is present, it must be separated from the whole number by a period, and may have up to 9 digits. If a partition number and slash are not present, then the attribute spacecraft_clock_partition must be used.</formation_rule>
+            <minimum_characters>1</minimum_characters>
+            <maximum_characters>19</maximum_characters>
+            <pattern>([1-9]/)?[0-9]{1,10}(\.[0-9]{1,9})?</pattern>
         </DD_Value_Domain>
     </DD_Attribute>
+
     <DD_Attribute>
         <name>spacecraft_clock_stop_corrected</name>
         <version_id>1.0</version_id>
@@ -169,10 +191,14 @@
         <definition>This value denotes the observation spacecraft clock stop (SCLK) recorded, corrected for an clock updates.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <formation_rule>[p/]dddddddddd[.fffffffff] - The spacecraft clock value is an integer with no more than 10 digits, optionally preceded by a clock partition number and forward slash, and optionally followed by a fractional value. If the fractional value is present, it must be separated from the whole number by a period, and may have up to 9 digits. If a partition number and slash are not present, then the attribute spacecraft_clock_partition must be used.</formation_rule>
+            <minimum_characters>1</minimum_characters>
+            <maximum_characters>19</maximum_characters>
+            <pattern>([1-9]/)?[0-9]{1,10}(\.[0-9]{1,9})?</pattern>
         </DD_Value_Domain>
     </DD_Attribute>
+
     <DD_Attribute>
         <name>spacecraft_clock_partition</name>
         <version_id>1.0</version_id>
@@ -185,6 +211,7 @@
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
+
     <DD_Attribute>
         <name>spacecraft_fsw_dictionary_version</name>
         <version_id>1.0</version_id>
@@ -194,7 +221,7 @@
         <definition>This value denotes the version of the spacecraft fsw dictionary in use.</definition>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
-            <value_data_type>ASCII_Integer</value_data_type>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
             <DD_Permissible_Value>
                 <value>5_4_2_1</value>
                 <value_meaning>Version 5.4.2.1 of the Psyche FSW dictionary.</value_meaning>
@@ -205,6 +232,7 @@
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
+    
     <DD_Attribute>
         <name>spacecraft_active_flight_computer</name>
         <version_id>1.0</version_id>
@@ -225,9 +253,6 @@
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
-    
-
 
     <DD_Class>
         <name>Psyche_Parameters</name>
@@ -235,20 +260,6 @@
         <local_identifier>psyche.Psyche_Parameters</local_identifier>
         <submitter_name>Ernest Cisneros</submitter_name>
         <definition>Class for Psyche related values.</definition>
-        <element_flag>true</element_flag>
-        <DD_Association>
-            <identifier_reference>psyche.Observation_Information</identifier_reference>
-            <reference_type>component_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>   
-    <DD_Class>
-        <name>Observation_Information</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Observation_Information</local_identifier>
-        <submitter_name>Ernest Cisneros</submitter_name>
-        <definition>The Psyche observation information class and attributes pertaining to an observation.</definition>
         <element_flag>true</element_flag>
         <DD_Association>
             <identifier_reference>psyche.Observation_Information.mission_phase_name</identifier_reference>
@@ -311,4 +322,72 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
+    <!-- end class definitions and associated attributes statements -->
+
+
+    <!-- begin rule statements -->
+    <DD_Rule>
+	    <local_identifier>psyche_time_rules</local_identifier>
+	    <rule_context>/pds:Product_Observational/pds:Observation_Area/pds:Discpline_Area/psyche:Psyche_Parameters</rule_context>
+
+	    <DD_Rule_Statement>
+		    <rule_type>Assert</rule_type>
+		    <rule_test>if ( (psyche:spacecraft_clock_partition) 
+                               or (contains(psyche:spacecraft_clock_start, '/')) 
+                               or ( (not (psyche:spacecraft_clock_partition)) and (not (psyche:spacecraft_clock_start)) ) ) 
+			       then true() else false()
+	            </rule_test>
+		    <rule_message>psyche:error:sclk_rule_0: If psyche:spacecraft_clock_start is
+	             present, it must begin with a partition number followed by a forward slash, or the clock partition must be given by
+	             psyche:spacecraft_clock_partition. </rule_message>
+	            <rule_description>If the spacecraft_clock_start is present, it must begin with a partition
+                      number followed by a forward slash, or the partition number must be given by spacecraft_clock_partition</rule_description>
+	    </DD_Rule_Statement>
+
+	    <DD_Rule_Statement>
+		    <rule_type>Assert</rule_type>
+		    <rule_test>if ( (psyche:spacecraft_clock_partition) 
+                               or (contains(psyche:spacecraft_clock_stop, '/')) 
+                               or ( (not (psyche:spacecraft_clock_partition)) and (not (psyche:spacecraft_clock_stop)) ) ) 
+			       then true() else false()
+	            </rule_test>
+		    <rule_message>psyche:error:sclk_rule_1: If psyche:spacecraft_clock_stop is
+	             present, it must begin with a partition number followed by a forward slash, or the clock partition must be given by
+	             psyche:spacecraft_clock_partition. </rule_message>
+		    <rule_description>If the spacecraft_clock_stop is present, it must begin with a partition
+	              number followed by a forward slash, or the partition number must be given by spacecraft_clock_partition</rule_description>
+	    </DD_Rule_Statement>
+
+	    <DD_Rule_Statement>
+		    <rule_type>Assert</rule_type>
+		    <rule_test>if ( (psyche:spacecraft_clock_partition) 
+                               or (contains(psyche:spacecraft_clock_start_corrected, '/')) 
+                               or ( (not (psyche:spacecraft_clock_partition)) and (not (psyche:spacecraft_clock_start_corrected)) ) ) 
+			       then true() else false()
+	            </rule_test>
+		    <rule_message>psyche:error:sclk_rule_2: If psyche:spacecraft_clock_start_corrected is
+	             present, it must begin with a partition number followed by a forward slash, or the clock partition must be given by
+	             psyche:spacecraft_clock_partition. </rule_message>
+		    <rule_description>If the spacecraft_clock_start_corrected is present, it must begin with a partition
+	              number followed by a forward slash, or the partition number must be given by spacecraft_clock_partition</rule_description>
+	    </DD_Rule_Statement>
+
+	    <DD_Rule_Statement>
+		    <rule_type>Assert</rule_type>
+		    <rule_test>if ( (psyche:spacecraft_clock_partition) 
+                               or (contains(psyche:spacecraft_clock_stop_corrected, '/')) 
+                               or ( (not (psyche:spacecraft_clock_partition)) and (not (psyche:spacecraft_clock_stop_corrected)) ) ) 
+			       then true() else false()
+	            </rule_test>
+		    <rule_message>psyche:error:sclk_rule_3: If psyche:spacecraft_clock_stop_corrected is
+	             present, it must begin with a partition number followed by a forward slash, or the clock partition must be given by
+	             psyche:spacecraft_clock_partition. </rule_message>
+		    <rule_description>If the spacecraft_clock_stop_sorrected is present, it must begin with a partition
+	              number followed by a forward slash, or the partition number must be given by spacecraft_clock_partition</rule_description>
+	    </DD_Rule_Statement>
+
+    </DD_Rule>
+
+    <!-- end rule statements -->
+
 </Ingest_LDD>
