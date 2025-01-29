@@ -1,15 +1,20 @@
-{date}  
-{author}
+PDS4 Psyche Mission Dictionary User's Guide
 
-> Note to authors who use this outline: The outline is a
-> suggestion only. It includes the minimum of content needed to inform the
-> dictionary user. Authors are expected to tailor the outline to their particular
-> purposes, elaborating and providing context as needed.
+2024-12-13
+Ernest Cisneros (ecisneros@asu.edu)
+
+<!-- Everything below this comment needs editing -->
 
 # Introduction
-   1. Purpose of this User’s Guide
-   1. Audience
-   1. Applicable Documents
+   1. Purpose of this Users Guide
+
+   This guide provide information regarding the Psyche mission dictionary and how to include the information covered by this dictionary in a product label.
+
+   2. Audience
+
+   This guide should be used by data providers creating and archiving products with the PDS, derived from instruments or other data acquired by the Psyche spacecraft.
+
+   3. Applicable Documents
 
 # Overview of the {name} Local Data Dictionary
 
@@ -73,3 +78,20 @@ map_projection_name attribute provides the name of the map projection.")*
 *Give one or more examples of label snippets for real products, annotated as appropriate. 
 Make sure the examples can be successfully validated using the latest version of the PDS4 
 core dictionary and, of course, the dictionary described in this document.*
+
+```
+<Discipline_Area>
+   <psyche:Psyche_Parameters>
+      <psyche:mission_phase_name> </psyche:mission_phase_name>
+      <psyche:orbit_number> </psyche:orbit_number>
+      <psyche:release_number> </psyche:release_number>
+      <psyche:spacecraft_clock_partition> </psyche:spacecraft_clock_partition>
+      <psyche:spacecraft_clock_start> </psyche:spacecraft_clock_start>
+      <psyche:spacecraft_clock_stop> </psyche:spacecraft_clock_stop>
+      <psyche:spacecraft_clock_start_corrected> </psyche:spacecraft_clock_start_corrected>
+      <psyche:spacecraft_clock_stop_corrected> </psyche:spacecraft_clock_stop_corrected>
+      <psyche:spacecraft_fsw_dictionary_version> </psyche:spacecraft_fsw_dictionary_version>
+      <psyche:spacecraft_active_flight_computer> </psyche:spacecraft_active_flight_computer>
+   </psyche:Psyche_Parameters>
+</Discipline_Area>
+```

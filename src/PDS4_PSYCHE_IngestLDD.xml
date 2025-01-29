@@ -16,6 +16,7 @@
     <namespace_id>psyche</namespace_id>
     <last_modification_date_time>2024-12-06T05:46:13Z</last_modification_date_time>
     
+    <!-- begin class definitions and associated attributes statements -->
     <DD_Attribute>
         <name>mission_phase_name</name>
         <version_id>1.0</version_id>
@@ -321,4 +322,72 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
+    <!-- end class definitions and associated attributes statements -->
+
+
+    <!-- begin rule statements -->
+    <DD_Rule>
+	    <local_identifier>psyche_time_rules</local_identifier>
+	    <rule_context>/pds:Product_Observational/pds:Observation_Area/pds:Discpline_Area/psyche:Psyche_Parameters</rule_context>
+
+	    <DD_Rule_Statement>
+		    <rule_type>Assert</rule_type>
+		    <rule_test>if ( (psyche:spacecraft_clock_partition) 
+                               or (contains(psyche:spacecraft_clock_start, '/')) 
+                               or ( (not (psyche:spacecraft_clock_partition)) and (not (psyche:spacecraft_clock_start)) ) ) 
+			       then true() else false()
+	            </rule_test>
+		    <rule_message>psyche:error:sclk_rule_0: If psyche:spacecraft_clock_start is
+	             present, it must begin with a partition number followed by a forward slash, or the clock partition must be given by
+	             psyche:spacecraft_clock_partition. </rule_message>
+	            <rule_description>If the spacecraft_clock_start is present, it must begin with a partition
+                      number followed by a forward slash, or the partition number must be given by spacecraft_clock_partition</rule_description>
+	    </DD_Rule_Statement>
+
+	    <DD_Rule_Statement>
+		    <rule_type>Assert</rule_type>
+		    <rule_test>if ( (psyche:spacecraft_clock_partition) 
+                               or (contains(psyche:spacecraft_clock_stop, '/')) 
+                               or ( (not (psyche:spacecraft_clock_partition)) and (not (psyche:spacecraft_clock_stop)) ) ) 
+			       then true() else false()
+	            </rule_test>
+		    <rule_message>psyche:error:sclk_rule_1: If psyche:spacecraft_clock_stop is
+	             present, it must begin with a partition number followed by a forward slash, or the clock partition must be given by
+	             psyche:spacecraft_clock_partition. </rule_message>
+		    <rule_description>If the spacecraft_clock_stop is present, it must begin with a partition
+	              number followed by a forward slash, or the partition number must be given by spacecraft_clock_partition</rule_description>
+	    </DD_Rule_Statement>
+
+	    <DD_Rule_Statement>
+		    <rule_type>Assert</rule_type>
+		    <rule_test>if ( (psyche:spacecraft_clock_partition) 
+                               or (contains(psyche:spacecraft_clock_start_corrected, '/')) 
+                               or ( (not (psyche:spacecraft_clock_partition)) and (not (psyche:spacecraft_clock_start_corrected)) ) ) 
+			       then true() else false()
+	            </rule_test>
+		    <rule_message>psyche:error:sclk_rule_2: If psyche:spacecraft_clock_start_corrected is
+	             present, it must begin with a partition number followed by a forward slash, or the clock partition must be given by
+	             psyche:spacecraft_clock_partition. </rule_message>
+		    <rule_description>If the spacecraft_clock_start_corrected is present, it must begin with a partition
+	              number followed by a forward slash, or the partition number must be given by spacecraft_clock_partition</rule_description>
+	    </DD_Rule_Statement>
+
+	    <DD_Rule_Statement>
+		    <rule_type>Assert</rule_type>
+		    <rule_test>if ( (psyche:spacecraft_clock_partition) 
+                               or (contains(psyche:spacecraft_clock_stop_corrected, '/')) 
+                               or ( (not (psyche:spacecraft_clock_partition)) and (not (psyche:spacecraft_clock_stop_corrected)) ) ) 
+			       then true() else false()
+	            </rule_test>
+		    <rule_message>psyche:error:sclk_rule_3: If psyche:spacecraft_clock_stop_corrected is
+	             present, it must begin with a partition number followed by a forward slash, or the clock partition must be given by
+	             psyche:spacecraft_clock_partition. </rule_message>
+		    <rule_description>If the spacecraft_clock_stop_sorrected is present, it must begin with a partition
+	              number followed by a forward slash, or the partition number must be given by spacecraft_clock_partition</rule_description>
+	    </DD_Rule_Statement>
+
+    </DD_Rule>
+
+    <!-- end rule statements -->
+
 </Ingest_LDD>
