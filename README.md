@@ -7,31 +7,20 @@
    potentially mysterious cases.
 -->
 
-# Psyche Mission ({prefix:}) "Local" Dictionary
-<!-- EXAMPLES
-   Spectral (sp:) Discipline Dictionary
-   DART Mission (dart:) Local Dictionary
--->
+# Psyche Mission ({psyche:}) Local Dictionary
 
-The {dictionary name} dictionary provides classes and attributes for
-{brief functional description}
+The Psyche Mission dictionary provides classes and attributes for
+Psyche mission and PDS4 products from observations from the missions three 
+instruments or from science working groups.
 
 ### Steward
-{steward name} ({steward GitHub handle}), {steward node}
-<!-- EXAMPLE
-     Anne Raugh (@acraugh), Small Bodies Node (SBN)
--->
+Ernest Cisneros (@spacerockjock), Arizona State University (ASU)
 
 # Documentation
 
-<!-- The following assumes the complete documentation set exists. If it
-does not, edit the sentence and link accordingly. -->
 The User's Guide and detailed documentation for using this dictionary in
 label design and processing
-are located at https://pds-data-dictionaries.github.io/{repo id}.
-<!-- EXAMPLE
-     are located at https://pds-data-dictionaries.github.io/ldd-template.
--->
+are located at https://pds-data-dictionaries.github.io/ldd-psyche.
 
 # Latest Release
 
@@ -55,7 +44,7 @@ are located at https://pds-data-dictionaries.github.io/{repo id}.
        * Review the [Change Log] (ChangeLog.md)
        * Review the [Change Log] (src/CHANGELOG.md)
 -->     
-* Download dictionary files from the [PDS Data Dictionaries Page](https://pds.nasa.gov/datastandards/dictionaries/#{dictionary prefix})
+* Download dictionary files from the [PDS Data Dictionaries Page](https://pds.nasa.gov/datastandards/dictionaries/index-missions.shtml#psyche)
 * On [GitHub](../../releases/latest)
 * Review the [Change log]({change log file name})
 
