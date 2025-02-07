@@ -34,7 +34,7 @@
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>preflight</value>
-                <value_meaning>The Psyche mission phase usef for preflight operations.</value_meaning>
+                <value_meaning>The Psyche mission phase used for preflight operations.</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>atlo</value>
