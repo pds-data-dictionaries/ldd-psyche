@@ -1,20 +1,11 @@
-<!--
-   README.md template
-
-   In this template, values delimited by braces (e.g., "{value}") should be
-   replaced by the appropriate values for your namespace. The braces
-   should then be removed. Example values are provided as comments for
-   potentially mysterious cases.
--->
-
-# Psyche Mission ({psyche:}) Local Dictionary
+# Psyche Mission (psyche:) Local Dictionary
 
 The Psyche Mission dictionary provides classes and attributes for
 Psyche mission and PDS4 products from observations from the missions three 
 instruments or from science working groups.
 
 ### Steward
-Ernest Cisneros (@spacerockjock), Arizona State University (ASU)
+Ernest Cisneros (@spacerockjock), Psyche Mission Science Data Center, Arizona State University (ASU)
 
 # Documentation
 
@@ -24,29 +15,9 @@ are located at https://pds-data-dictionaries.github.io/ldd-psyche.
 
 # Latest Release
 
-<!-- Note that the Dictionaries Page link below won't look right on the
-     rendered page until you replace the braces and content with the
-     dictionary prefix.
-
-     EXAMPLE
-
-     [PDS Data Dictionaries Page](https://pds.nasa.gov/datastandards/dictionaries/#sp)
-
-     The GitHub link will exist once there is an official first release of
-     the dictionary (typically part of a system build) for the namespace. The
-     link is the same for all LDD repos and all builds.
-
-     The change log file is usually in the root directory of the repo, but
-     path information relative to root can be included if needed.
-
-     EXAMPLES
-
-       * Review the [Change Log] (ChangeLog.md)
-       * Review the [Change Log] (src/CHANGELOG.md)
--->     
 * Download dictionary files from the [PDS Data Dictionaries Page](https://pds.nasa.gov/datastandards/dictionaries/index-missions.shtml#psyche)
 * On [GitHub](../../releases/latest)
-* Review the [Change log]({change log file name})
+* Review the [Change log](CHANGELOG.md)
 
 # About This Repository
 <!-- The top-level directory structure and names must not change, but if
