@@ -1,13 +1,13 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        15.1.0
+   LDDTool Version        15.2.4
    LDD Version Id:        1.0.0.0
    LDD Label Version Id:  1.23
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Mon Jun 24 18:57:57 UTC 2024
+   Time                   Fri Feb 07 18:59:58 UTC 2025
    Common Schema          [PDS4_PDS_1H00.xsd]
    Common Schematron      [PDS4_PDS_1H00.sch]
    IM Version Id:         1.17.0.0
@@ -44,7 +44,7 @@ Parsed Input - Header:
    Steward                ernestcisneros
    Namespace Id           psyche
    Comment                _TBD_Ingest_LDD
-   Last Modification Time 2023-05-23T13:00:00Z
+   Last Modification Time 2025-01-29T19:28:59Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
@@ -66,27 +66,31 @@ Parsed Input - Attributes:
 
    name                   spacecraft_clock_start
    version                1.17
-   value data type        ASCII_Real
+   value data type        ASCII_Short_String_Collapsed
    description            This value denotes the observation spacecraft clock start (SCLK) recorded.
-   unit of measure type   Units_of_Time
+   minimum characters     1
+   maximum characters     19
 
    name                   spacecraft_clock_stop
    version                1.17
-   value data type        ASCII_Real
+   value data type        ASCII_Short_String_Collapsed
    description            This value denotes the observation spacecraft clock stop (SCLK) recorded.
-   unit of measure type   Units_of_Time
+   minimum characters     1
+   maximum characters     19
 
    name                   spacecraft_clock_start_corrected
    version                1.17
-   value data type        ASCII_Real
+   value data type        ASCII_Short_String_Collapsed
    description            This value denotes the observation spacecraft clock start (SCLK) recorded, corrected for any clock updates.
-   unit of measure type   Units_of_Time
+   minimum characters     1
+   maximum characters     19
 
    name                   spacecraft_clock_stop_corrected
    version                1.17
-   value data type        ASCII_Real
+   value data type        ASCII_Short_String_Collapsed
    description            This value denotes the observation spacecraft clock stop (SCLK) recorded, corrected for an clock updates.
-   unit of measure type   Units_of_Time
+   minimum characters     1
+   maximum characters     19
 
    name                   spacecraft_clock_partition
    version                1.17
@@ -95,7 +99,7 @@ Parsed Input - Attributes:
 
    name                   spacecraft_fsw_dictionary_version
    version                1.17
-   value data type        ASCII_Integer
+   value data type        ASCII_Short_String_Collapsed
    description            This value denotes the version of the spacecraft fsw dictionary in use.
 
    name                   spacecraft_active_flight_computer
