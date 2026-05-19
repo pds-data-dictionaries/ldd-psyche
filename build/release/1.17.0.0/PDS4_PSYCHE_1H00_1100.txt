@@ -1,18 +1,18 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        15.2.4
-   LDD Version Id:        1.0.0.0
-   LDD Label Version Id:  1.26
+   LDDTool Version        16.1.2
+   LDD Version Id:        1.1.0.0
+   LDD Label Version Id:  1.23
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Wed Mar 19 20:59:37 UTC 2025
-   Common Schema          [PDS4_PDS_1K00.xsd]
-   Common Schematron      [PDS4_PDS_1K00.sch]
-   IM Version Id:         1.20.0.0
+   Time                   Tue May 19 18:13:09 UTC 2026
+   Common Schema          [PDS4_PDS_1H00.xsd]
+   Common Schematron      [PDS4_PDS_1H00.sch]
+   IM Version Id:         1.17.0.0
    IM Namespace Id:       pds
-   IM Label Version Id:   1.26
+   IM Label Version Id:   1.23
    IM Object Model        [UpperModel.pont]
    IM Data Dictionary     [dd11179.pins]
    IM Glossary            [Glossary.pins]
@@ -39,71 +39,71 @@ Detailed validation messages
 
 Parsed Input - Header:
    LDD Name               Psyche Mission LDD
-   LDD Version            1.0.0.0
+   LDD Version            1.1.0.0
    Full Name              Ernest Cisneros
    Steward                ernestcisneros
    Namespace Id           psyche
    Comment                _TBD_Ingest_LDD
-   Last Modification Time 2025-01-29T19:28:59Z
+   Last Modification Time 2026-05-19T17:55:51Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
 
    name                   mission_phase_name
-   version                1.20
+   version                1.17
    value data type        ASCII_Short_String_Collapsed
    description            The Psyche Mission phase name.
 
    name                   orbit_number
-   version                1.20
+   version                1.17
    value data type        ASCII_Integer
    description            This value denotes the orbit number during orbital operations.
 
    name                   release_number
-   version                1.20
+   version                1.17
    value data type        ASCII_Integer
    description            This value denotes the release number when a product was published.
 
    name                   spacecraft_clock_start
-   version                1.20
+   version                1.17
    value data type        ASCII_Short_String_Collapsed
    description            This value denotes the observation spacecraft clock start (SCLK) recorded.
    minimum characters     1
    maximum characters     19
 
    name                   spacecraft_clock_stop
-   version                1.20
+   version                1.17
    value data type        ASCII_Short_String_Collapsed
    description            This value denotes the observation spacecraft clock stop (SCLK) recorded.
    minimum characters     1
    maximum characters     19
 
    name                   spacecraft_clock_start_corrected
-   version                1.20
+   version                1.17
    value data type        ASCII_Short_String_Collapsed
    description            This value denotes the observation spacecraft clock start (SCLK) recorded, corrected for any clock updates.
    minimum characters     1
    maximum characters     19
 
    name                   spacecraft_clock_stop_corrected
-   version                1.20
+   version                1.17
    value data type        ASCII_Short_String_Collapsed
    description            This value denotes the observation spacecraft clock stop (SCLK) recorded, corrected for an clock updates.
    minimum characters     1
    maximum characters     19
 
    name                   spacecraft_clock_partition
-   version                1.20
+   version                1.17
    value data type        ASCII_Short_String_Collapsed
    description            This value denotes the spacecraft clock partition, tracking any clock resets.
 
    name                   spacecraft_fsw_dictionary_version
-   version                1.20
+   version                1.17
    value data type        ASCII_Short_String_Collapsed
    description            This value denotes the version of the spacecraft fsw dictionary in use.
 
    name                   spacecraft_active_flight_computer
-   version                1.20
+   version                1.17
    value data type        ASCII_Short_String_Collapsed
    description            This value denotes the spacecraft pce active and in use.
 

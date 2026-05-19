@@ -1,13 +1,13 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        15.2.4
-   LDD Version Id:        1.0.0.0
+   LDDTool Version        16.1.2
+   LDD Version Id:        1.1.0.0
    LDD Label Version Id:  1.23
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Wed Mar 19 20:59:37 UTC 2025
+   Time                   Tue May 19 18:13:09 UTC 2026
    Common Schema          [PDS4_PDS_1H00.xsd]
    Common Schematron      [PDS4_PDS_1H00.sch]
    IM Version Id:         1.17.0.0
@@ -39,12 +39,12 @@ Detailed validation messages
 
 Parsed Input - Header:
    LDD Name               Psyche Mission LDD
-   LDD Version            1.0.0.0
+   LDD Version            1.1.0.0
    Full Name              Ernest Cisneros
    Steward                ernestcisneros
    Namespace Id           psyche
    Comment                _TBD_Ingest_LDD
-   Last Modification Time 2025-01-29T19:28:59Z
+   Last Modification Time 2026-05-19T17:55:51Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:

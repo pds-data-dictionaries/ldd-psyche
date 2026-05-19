@@ -1,5 +1,5 @@
-{date}  
-{author}
+May 19, 2026
+Ernest Cisneros, Psyche Science Data Center, ASU
 
 > Note to authors who use this outline: The outline is a
 > suggestion only. It includes the minimum of content needed to inform the
@@ -11,45 +11,48 @@
    1. Audience
    1. Applicable Documents
 
-# Overview of the {name} Local Data Dictionary
+# Overview of the Psyche Mission Local Data Dictionary
 
-*What is this dictionary for? What kinds of products might
-use this dictionary? Who is the steward of this dictionary (person and node
-name)? How often is it updated? To whom should questions about it be directed?
-(Give an email address or link to a page with contact information.)*
+The Psyche Local Data Dictionary (LDD), commonly referred to as the Psyche
+Mission Dictionary, was designed during the projects phase C and D development,
+and the first cruise flight segment. The dictionary is based on the 1.22.0 PDS
+information model. Attributes can be found in the Discipline_Area section of a
+PDS4 label.
+
+Steward: Ernest Cisneros, Psyche Science Data Center, ASU, ecisneros@asu.edu
 
 # Organization of Classes and Attributes
 
-*Give a schematic diagram or a list showing the hierarchy of
-classes in order of appearance in label. Refer the reader to the Definitions
-section for complete definitions. An example of such a list is given on the
-page [Filling Out The Spectral Dictionary Classes](http://sbndev.astro.umd.edu/wiki/Filling_Out_the_Spectral_Dictionary_Classes#.3CCircular_FOV.3E)
-on the PDS Small Bodies Node wiki. In this example the names of classes and attributes have hyperlinks to
-their definitions further down the page, a useful lookup tool.*
+The following classes and attributes are defined for the Psyche mission. 
+SLCK values can be provide with or without a clock partition, and in either 
+byte or decimal based notation. If the SCLK is given without a clock partition,
+the spacecraft_clock_partition keyword must be defined. Example of properly 
+formatted SLCK values include: 0/0792731143-0277070, 0792731143-0277070, or
+0792731143.2642345.
 
-*The author should take into consideration the complexity
-of the dictionary when organizing this section.  If the hierarchy is large or
-complicated, it may be helpful to break it down by class as shown in the
-following subsections, but don’t forget to provide a high-level view of how the
-classes relate to one another.*
+## Mission Wide Classes and Attributes
 
-## Class 1
+The following attributes are defined for the mission.
 
-*What is this class for?*
+[psyche:mission_phase_name](#mission_phase_name) - This class contains an enumerated text string corresponding to the specific mission phase that a product was acquired in. If a product spans a phase boundary, this attribute should be set to phase in which the observation began acquisition.
+[psyche:orbit](#orbit) - This class contains an integer value corresponding to the orbit number, in that particular orbital operations phase.
+[psyche:release_number](#release_number) - This class contains an integer value corresponding to the release number that a particular product was associated with.
+[psyche:spacecraft_clock_partition](#spacecraft_clock_partition) - This class contains the integer value corresponding to the current mission clock partition for the current observation.
+[psyche:spacecraft_clock_start](#spacecraft_clock_start) - This class contains the SCLK value at the start of the observation.
+[psyche:spacecraft_clock_stop](#spacecraft_clock_stop) - This class contains the SCLK value at the end of the observation.
+[psyche:spacecraft_clock_start_corrected](#spacecraft_clock_start_corrected) - This class contains the corrected SCLK value at the start of the observation.
+[psyche:spacecraft_clock_stop_corrected](#spacecraft_clock_stop_corrected) - This class contains the corrected SCLK value at the end of the observation.
+[psyche:spacecraft_fsw_dictionary_version](#spacecraft_fsw_dictionary_version) - This class contains an enumerated string value corresponding to the flight software dictionary being used the observation acquisition.  Acceptable values are: `'5_4_2_1' or '5_4_2_2'.
+[psyche:spacecraft_active_flight_computer](#spacecraft_active_flight_computer) - This class contains an enumerated character value corresponding to which RCE was in control during the observation acquisition. Acceptable values are: `A' or `B'.
 
-*Give a schematic diagram or a list of the attributes in this class in order of 
-appearance in label. Refer reader to Definitions section for complete definitions.*
 
-*Give label snippets showing use of the class and attributes, with annotations 
-as appropriate. Refer reader to Examples section for complete examples.*
+## Instrument Specific Classes and Attributes
 
-*Explain why some things are required and others are optional.*
-
-*List and explain any rules that apply to this class (e.g. from Schematron).*
-
-## Class 2
-
-[repeat this subsection for each class]
+At the time of this release, no instrument specific classes or attributes have
+been defined. Additional work on the Imager, Magnetometer, Gamma Ray
+Spectrometer, and Neutron Spectrometer PDS4 products may necessitate the
+development of instrument specific classes and attributes, especially
+post-Mars gravity assist, and certification of each instruments calibrated product pipeline.
 
 # Definitions
 
