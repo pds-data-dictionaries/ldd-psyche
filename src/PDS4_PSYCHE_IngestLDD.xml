@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.sch"
-  schematypens="http://purl.oclc.org/dsdl/schematron"?>
-  <?xml-model href="https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1H00_1510.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1M00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
   <Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1" 
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xmlns:psyche="http://pds.nasa.gov/pds4/mission/psyche/v1" 
-  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd">
+  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1M00.xsd">
     
   <name>Psyche Mission LDD</name>
-    <ldd_version_id>1.0.0.0</ldd_version_id>
+    <ldd_version_id>1.1.0.0</ldd_version_id>
     <dictionary_type>Mission</dictionary_type>
     <full_name>Ernest Cisneros</full_name>
     <steward_id>ernestcisneros</steward_id>
     <namespace_id>psyche</namespace_id>
-    <last_modification_date_time>2025-01-29T19:28:59Z</last_modification_date_time>
+    <last_modification_date_time>2026-05-19T17:55:51Z</last_modification_date_time>
     
     <!-- begin class definitions and associated attributes statements -->
     <DD_Attribute>
