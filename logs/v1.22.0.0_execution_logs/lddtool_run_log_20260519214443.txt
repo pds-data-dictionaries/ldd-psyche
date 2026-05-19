@@ -1,10 +1,10 @@
 
->>  INFO LDDTOOL Version: 16.1.2
->>  INFO IM Version Id: 1.17.0.0
+>>  INFO LDDTOOL Version: 16.0.0
+>>  INFO IM Version Id: 1.22.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.23
->>  INFO Date: Tue May 19 21:36:43 UTC 2026
->>  INFO PARENT_DIR: /tmp/lddtool-16.1.2/Data/
+>>  INFO IM Label Version Id: 1.0
+>>  INFO Date: Tue May 19 21:44:44 UTC 2026
+>>  INFO PARENT_DIR: /tmp/lddtool-16.0.0/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:psyche
 >>> INFO Init:  - Config.Properties Namespace Id Using:psyche
@@ -25,7 +25,7 @@
 
 Input:
 
-     - IM Version: 1H00
+     - IM Version: 1M00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -35,9 +35,9 @@ Input:
 
 Output:
 
-     - ./PDS4_PSYCHE_1H00_1000.xsd
-     - ./PDS4_PSYCHE_1H00_1000.sch
-     - ./PDS4_PSYCHE_1H00_1000.xml
-     - ./export/PDS4_PDS_1H00.JSON
+     - ./PDS4_PSYCHE_1M00_1000.xsd
+     - ./PDS4_PSYCHE_1M00_1000.sch
+     - ./PDS4_PSYCHE_1M00_1000.xml
+     - ./export/PDS4_PDS_1M00.JSON
 
 >>  INFO Exit(0)
