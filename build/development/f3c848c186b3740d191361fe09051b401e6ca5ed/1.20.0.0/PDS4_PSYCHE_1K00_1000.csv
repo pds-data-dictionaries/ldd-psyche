@@ -1,5 +1,5 @@
 "Sort Key","Type","Name","Version","Name Space Id","Description","Steward","Value Type","Minimum Cardinality","Maximum Cardinality","Minimum Value","Maximum Value","Minimum Characters","Maximum Characters","Unit of Measure Type","Specified Unit Id","Attribute Concept","Conceptual Domain"
-"psyche:Psyche_Parameters:1             ","Class","Psyche_Parameters","1.0.0.0","psyche","Class for Psyche related values.","ernestcisneros","","","","","","","","","","",""
+"psyche:Psyche_Parameters:1             ","Class","Psyche_Parameters","1.0","psyche","Class for Psyche related values.","ernestcisneros","","","","","","","","","","",""
 "psyche:Psyche_Parameters:2              psyche:mission_phase_name:1            ","Attribute","mission_phase_name","n/a","psyche","The Psyche Mission phase name.","ernestcisneros","ASCII_Short_String_Collapsed","0","1","Unbounded","Unbounded","1","255","Units_of_None","none","TBD_classConcept","SHORT_STRING"
 "psyche:Psyche_Parameters:2              psyche:mission_phase_name:2             Value:approach","Value","approach","","","The Psyche mission phase used for the approach to 16 Psyche, last 100 days."
 "psyche:Psyche_Parameters:2              psyche:mission_phase_name:2             Value:atlo","Value","atlo","","","The Psyche mission phase used for ATLO."
