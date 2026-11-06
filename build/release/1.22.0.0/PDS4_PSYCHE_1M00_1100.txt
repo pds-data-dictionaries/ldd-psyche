@@ -1,13 +1,13 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        16.1.2
+   LDDTool Version        16.1.3
    LDD Version Id:        1.1.0.0
    LDD Label Version Id:  1.0
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Tue May 19 18:13:11 UTC 2026
+   Time                   Fri Nov 06 21:51:13 UTC 2026
    Common Schema          [PDS4_PDS_1M00.xsd]
    Common Schematron      [PDS4_PDS_1M00.sch]
    IM Version Id:         1.22.0.0
@@ -28,9 +28,9 @@ Parameters:
    Merge with Master      false
 
 Summary:
-   Classes                1
-   Attributes             10
-   Associations           10
+   Classes                4
+   Attributes             17
+   Associations           20
    Error messages         0
    Warning messages       0
    Information messages   0
@@ -43,8 +43,22 @@ Parsed Input - Header:
    Full Name              Ernest Cisneros
    Steward                ernestcisneros
    Namespace Id           psyche
-   Comment                _TBD_Ingest_LDD
-   Last Modification Time 2026-05-19T17:55:51Z
+   Comment                
+      The Psyche mission dictionary contains classes and attributes specific
+      to the Psyche spacecraft and its instruments.
+
+      Psyche version 1.1.0.0
+
+      2025-01-29 Completed initial version for flight [Ernest Cisneros]
+      2026-10-29 Addition of Magnetometer and Imager specific attributes.
+                 Imager attributes based on Imager label work by SDC and
+                 Magnetometer attributes were suggested by Matt Wall (MIT/Mag),
+                 as relayed to Lauren Auchterlonie (ASU/SDC). [Ernest Cisneros]
+                 Also added new super-class Psyche_Mission to contain the
+                 Psyche_Parameters, Magnetometer_Parameters and Imager_Parameters
+                 classes.
+    
+   Last Modification Time 2026-10-29T12:15:51Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
@@ -107,7 +121,93 @@ Parsed Input - Attributes:
    value data type        ASCII_Short_String_Collapsed
    description            This value denotes the spacecraft pce active and in use.
 
+   name                   magnetometer_instrument_id
+   version                1.22
+   value data type        ASCII_Short_String_Collapsed
+   description            This value denotes which magnetometer the data was derived from.
+
+   name                   electronics_unit_id
+   version                1.22
+   value data type        ASCII_Short_String_Collapsed
+   description            This value denotes the magnetometer electronics unit in use.
+
+   name                   magnetometer_temperature
+   version                1.22
+   value data type        ASCII_Integer
+   description            This values denotes the temperature of the indicated magnetometer during data collection.
+
+   name                   magnetometer_frequency
+   version                1.22
+   value data type        ASCII_Integer
+   description            This values denotes the operating frequency of the indicated magnetometer during data collection.
+
+   name                   magnetometer_delay
+   version                1.22
+   value data type        ASCII_Integer
+   description            This value denotes the delay used for the indicated magnetometer during data collection.
+
+   name                   magnetometer_sampling_frequency
+   version                1.22
+   value data type        ASCII_Integer
+   description            This value denotes the sampling fequency for the indicated magnetometer during data collection.
+
+   name                   imager_instrument_id
+   version                1.22
+   value data type        ASCII_Short_String_Collapsed
+   description            This values denotes the Imager an observations was acquired from.
+
 Parsed Input - Classes:
+
+   name                   Magnetometer_Parameters
+   description            Class for Psyche Magnetometer instrument related values.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      psyche.magnetometer_instrument_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      psyche.electronics_unit_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      psyche.magnetometer_temperature
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      psyche.magnetometer_frequency
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      psyche.magnetometer_delay
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      psyche.magnetometer_sampling_frequency
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Imager_Parameters
+   description            Class for Psyche Imager instrument related values.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      psyche.imager_instrument_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
 
    name                   Psyche_Parameters
    description            Class for Psyche related values.
@@ -117,54 +217,77 @@ Parsed Input - Classes:
 
    Associations
 
-      local identifier      psyche.Observation_Information.mission_phase_name
+      local identifier      psyche.mission_phase_name
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      psyche.Observation_Information.orbit_number
+      local identifier      psyche.orbit_number
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      psyche.Observation_Information.release_number
+      local identifier      psyche.release_number
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      psyche.Observation_Information.spacecraft_clock_start
+      local identifier      psyche.spacecraft_clock_start
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      psyche.Observation_Information.spacecraft_clock_stop
+      local identifier      psyche.spacecraft_clock_stop
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      psyche.Observation_Information.spacecraft_clock_start_corrected
+      local identifier      psyche.spacecraft_clock_start_corrected
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      psyche.Observation_Information.spacecraft_clock_stop_corrected
+      local identifier      psyche.spacecraft_clock_stop_corrected
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      psyche.Observation_Information.spacecraft_clock_partition
+      local identifier      psyche.spacecraft_clock_partition
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      psyche.Observation_Information.spacecraft_fsw_dictionary_version
+      local identifier      psyche.spacecraft_fsw_dictionary_version
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      psyche.Observation_Information.spacecraft_active_flight_computer
+      local identifier      psyche.spacecraft_active_flight_computer
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
+
+   name                   Psyche_Mission
+   description            Superclass to contain Psyche spacecraft and instrument paramenters
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      psyche.Psyche_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      psyche.Magnetometer_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      psyche.Imager_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
 
 End of Report

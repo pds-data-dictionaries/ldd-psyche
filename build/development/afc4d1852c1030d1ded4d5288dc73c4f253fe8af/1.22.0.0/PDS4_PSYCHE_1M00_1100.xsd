@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:psyche  Version:1.1.0.0 - Tue May 19 18:13:11 UTC 2026 -->
-  <!-- Generated from the PDS4 Information Model Version 1.20.0.0 - System Build 13.1 -->
+  <!-- PDS4 XML/Schema for Name Space Id:psyche  Version:1.1.0.0 - Fri Nov 06 21:51:13 UTC 2026 -->
+  <!-- Generated from the PDS4 Information Model Version 1.22.0.0 - System Build 14.1 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
-  <!-- 1.20.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.22.0.0 - pds: - Common Dictionary                                       -->
   <!-- 1.1.0.0 - psyche: - Psyche Mission LDD                                    -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -15,15 +15,76 @@
     attributeFormDefault="unqualified"
     version="1.1.0.0">
  
-    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1K00.xsd"/>
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1M00.xsd"/>
  
   <xs:annotation>
     <xs:documentation>
-_TBD_Ingest_LDD
+
+      The Psyche mission dictionary contains classes and attributes specific
+      to the Psyche spacecraft and its instruments.
+
+      Psyche version 1.1.0.0
+
+      2025-01-29 Completed initial version for flight [Ernest Cisneros]
+      2026-10-29 Addition of Magnetometer and Imager specific attributes.
+                 Imager attributes based on Imager label work by SDC and
+                 Magnetometer attributes were suggested by Matt Wall (MIT/Mag),
+                 as relayed to Lauren Auchterlonie (ASU/SDC). [Ernest Cisneros]
+                 Also added new super-class Psyche_Mission to contain the
+                 Psyche_Parameters, Magnetometer_Parameters and Imager_Parameters
+                 classes.
+    
     </xs:documentation>
   </xs:annotation>
  
+  <xs:element name="Imager_Parameters" type="psyche:Imager_Parameters"> </xs:element>
+  <xs:element name="Magnetometer_Parameters" type="psyche:Magnetometer_Parameters"> </xs:element>
+  <xs:element name="Psyche_Mission" type="psyche:Psyche_Mission"> </xs:element>
   <xs:element name="Psyche_Parameters" type="psyche:Psyche_Parameters"> </xs:element>
+
+  <xs:complexType name="Imager_Parameters">
+    <xs:annotation>
+      <xs:documentation>Class for Psyche Imager instrument related
+        values.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="imager_instrument_id" type="psyche:imager_instrument_id" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="psyche:imager_instrument_id = ('imager_a', 'imager_b')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Magnetometer_Parameters">
+    <xs:annotation>
+      <xs:documentation>Class for Psyche Magnetometer instrument related
+        values.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="magnetometer_instrument_id" type="psyche:magnetometer_instrument_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="electronics_unit_id" type="psyche:electronics_unit_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="magnetometer_temperature" type="psyche:magnetometer_temperature" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="magnetometer_frequency" type="psyche:magnetometer_frequency" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="magnetometer_delay" type="psyche:magnetometer_delay" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="magnetometer_sampling_frequency" type="psyche:magnetometer_sampling_frequency" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="psyche:magnetometer_instrument_id = ('magnetometer_1', 'magnetometer_2')"/> -->
+    <!-- <xs:assert test="psyche:electronics_unit_id = ('EU_1', 'EU_2')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Psyche_Mission">
+    <xs:annotation>
+      <xs:documentation>Superclass to contain Psyche spacecraft and
+        instrument paramenters</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="psyche:Psyche_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element ref="psyche:Magnetometer_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element ref="psyche:Imager_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="Psyche_Parameters">
     <xs:annotation>
@@ -44,7 +105,7 @@ _TBD_Ingest_LDD
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
     <!-- <xs:assert test="psyche:mission_phase_name = ('approach', 'atlo', 'cruise_1', 'cruise_2', 'ico', 'launch', 'mga', 'orbit_a', 'orbit_b1', 'orbit_b2', 'orbit_c', 'orbit_d', 'orbit_transfer_a_to_b1', 'orbit_transfer_b1_to_d', 'orbit_transfer_c_to_b2', 'orbit_transfer_d_to_c', 'orbital_operations', 'preflight', 'test')"/> -->
-    <!-- <xs:assert test="psyche:spacecraft_fsw_dictionary_version = ('5_4_2_1', '5_4_2_2')"/> -->
+    <!-- <xs:assert test="psyche:spacecraft_fsw_dictionary_version = ('5_4_2_1', '5_4_2_2', '6_0_0_4', '6_0_0_5', '6_0_0_6', '6_0_0_7', '6_0_0_8', '6_0_0_9', '7_0_0_9')"/> -->
     <!-- <xs:assert test="psyche:spacecraft_active_flight_computer = ('A', 'B')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
@@ -56,6 +117,84 @@ _TBD_Ingest_LDD
         common namespace.
       </xs:documentation>
     </xs:annotation>
+
+  <xs:simpleType name="electronics_unit_id">
+    <xs:annotation>
+      <xs:documentation>This value denotes the magnetometer electronics
+        unit in use.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="imager_instrument_id">
+    <xs:annotation>
+      <xs:documentation>This values denotes the Imager an observations
+        was acquired from.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="magnetometer_delay">
+    <xs:annotation>
+      <xs:documentation>This value denotes the delay used for the
+        indicated magnetometer during data collection.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="magnetometer_frequency">
+    <xs:annotation>
+      <xs:documentation>This values denotes the operating frequency of
+        the indicated magnetometer during data
+        collection.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="magnetometer_instrument_id">
+    <xs:annotation>
+      <xs:documentation>This value denotes which magnetometer the data
+        was derived from.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="magnetometer_sampling_frequency">
+    <xs:annotation>
+      <xs:documentation>This value denotes the sampling fequency for the
+        indicated magnetometer during data collection.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="magnetometer_temperature">
+    <xs:annotation>
+      <xs:documentation>This values denotes the temperature of the
+        indicated magnetometer during data collection.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
 
   <xs:simpleType name="mission_phase_name">
     <xs:annotation>

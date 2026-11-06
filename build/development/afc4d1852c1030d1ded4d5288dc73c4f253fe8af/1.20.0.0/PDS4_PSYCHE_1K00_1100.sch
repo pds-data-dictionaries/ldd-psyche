@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:psyche  Version:1.1.0.0 - Tue May 19 18:13:11 UTC 2026 -->
+  <!-- PDS4 Schematron for Name Space Id:psyche  Version:1.1.0.0 - Fri Nov 06 21:51:13 UTC 2026 -->
   <!-- Generated from the PDS4 Information Model Version 1.20.0.0 - System Build 13.1 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -59,6 +59,27 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:rule context="psyche:Imager_Parameters/psyche:imager_instrument_id">
+      <sch:assert test=". = ('imager_a', 'imager_b')">
+        <title>psyche:Imager_Parameters/psyche:imager_instrument_id/psyche:imager_instrument_id</title>
+        The attribute psyche:Imager_Parameters/psyche:imager_instrument_id must be equal to one of the following values 'imager_a', 'imager_b'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="psyche:Magnetometer_Parameters/psyche:electronics_unit_id">
+      <sch:assert test=". = ('EU_1', 'EU_2')">
+        <title>psyche:Magnetometer_Parameters/psyche:electronics_unit_id/psyche:electronics_unit_id</title>
+        The attribute psyche:Magnetometer_Parameters/psyche:electronics_unit_id must be equal to one of the following values 'EU_1', 'EU_2'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="psyche:Magnetometer_Parameters/psyche:magnetometer_instrument_id">
+      <sch:assert test=". = ('magnetometer_1', 'magnetometer_2')">
+        <title>psyche:Magnetometer_Parameters/psyche:magnetometer_instrument_id/psyche:magnetometer_instrument_id</title>
+        The attribute psyche:Magnetometer_Parameters/psyche:magnetometer_instrument_id must be equal to one of the following values 'magnetometer_1', 'magnetometer_2'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:rule context="psyche:Psyche_Parameters/psyche:mission_phase_name">
       <sch:assert test=". = ('approach', 'atlo', 'cruise_1', 'cruise_2', 'ico', 'launch', 'mga', 'orbit_a', 'orbit_b1', 'orbit_b2', 'orbit_c', 'orbit_d', 'orbit_transfer_a_to_b1', 'orbit_transfer_b1_to_d', 'orbit_transfer_c_to_b2', 'orbit_transfer_d_to_c', 'orbital_operations', 'preflight', 'test')">
         <title>psyche:Psyche_Parameters/psyche:mission_phase_name/psyche:mission_phase_name</title>
@@ -74,9 +95,9 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="psyche:Psyche_Parameters/psyche:spacecraft_fsw_dictionary_version">
-      <sch:assert test=". = ('5_4_2_1', '5_4_2_2')">
+      <sch:assert test=". = ('5_4_2_1', '5_4_2_2', '6_0_0_4', '6_0_0_5', '6_0_0_6', '6_0_0_7', '6_0_0_8', '6_0_0_9', '7_0_0_9')">
         <title>psyche:Psyche_Parameters/psyche:spacecraft_fsw_dictionary_version/psyche:spacecraft_fsw_dictionary_version</title>
-        The attribute psyche:Psyche_Parameters/psyche:spacecraft_fsw_dictionary_version must be equal to one of the following values '5_4_2_1', '5_4_2_2'.</sch:assert>
+        The attribute psyche:Psyche_Parameters/psyche:spacecraft_fsw_dictionary_version must be equal to one of the following values '5_4_2_1', '5_4_2_2', '6_0_0_4', '6_0_0_5', '6_0_0_6', '6_0_0_7', '6_0_0_8', '6_0_0_9', '7_0_0_9'.</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>
