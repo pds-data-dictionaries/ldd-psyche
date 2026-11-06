@@ -1,10 +1,5 @@
-May 19, 2026
+Oct 28, 2026
 Ernest Cisneros, Psyche Science Data Center, ASU
-
-> Note to authors who use this outline: The outline is a
-> suggestion only. It includes the minimum of content needed to inform the
-> dictionary user. Authors are expected to tailor the outline to their particular
-> purposes, elaborating and providing context as needed.
 
 # Introduction
    1. Purpose of this User’s Guide
@@ -32,7 +27,7 @@ formatted SLCK values include: 0/0792731143-0277070, 0792731143-0277070, or
 
 ## Mission Wide Classes and Attributes
 
-The following attributes are defined for the mission.
+The following attributes are defined for the mission (Psyche_Mission super-class), and found within the Psyche_Parameters class.
 
 [psyche:mission_phase_name](#mission_phase_name) - This class contains an enumerated text string corresponding to the specific mission phase that a product was acquired in. If a product spans a phase boundary, this attribute should be set to phase in which the observation began acquisition.
 [psyche:orbit](#orbit) - This class contains an integer value corresponding to the orbit number, in that particular orbital operations phase.
@@ -48,31 +43,20 @@ The following attributes are defined for the mission.
 
 ## Instrument Specific Classes and Attributes
 
-At the time of this release, no instrument specific classes or attributes have
-been defined. Additional work on the Imager, Magnetometer, Gamma Ray
-Spectrometer, and Neutron Spectrometer PDS4 products may necessitate the
-development of instrument specific classes and attributes, especially
-post-Mars gravity assist, and certification of each instruments calibrated product pipeline.
+As of version 1.1.0.0 of the mission dictionary, there is a defined Magnetometer_Parameters
+and Imager_Parameters class, each containing instrument specific attributes. These classes
+are contained within the super-class Psyche_Mission.
 
-# Definitions
+### Magnetometer Instrument Attributes
 
-*Give an alphabetical list of all classes and attributes
-with complete definitions. (Useful ones, not silly ones like "The
-map_projection_name attribute provides the name of the map projection.")*
+[psyche:magnetometer_instrument_id](#magnetometer_instrument_id) - This attribute contains the enumerated magnetometer ID for the observation.
+[psyche:electronics_unit_id](#electronics_unit_id) - This attribute contains the mag electronics unit id for the observation.
+[psyche:magnetometer_temperature](#magnetometer_temperature) - This attribute contains the mag temperature for the observation.
+[psyche:magnetometer_frequency](#magnetometer_frequency) - This attribute contains the mag frequency for the observation.
+[psyche:magnetometer_delay](#magnetometer_delay) - This attribute contains the mag delay value for the observation.
+[psyche:magnetometer_sampling_frequency](#magnetometer_sampling_frequency) - This attribute contains the mag sampling frequency for the observation.
 
-*Include:*
+### Imager Instrument Attributes 
 
-- *Class or attribute name (indicate which it is; capitalize class names according to PDS4 standard)*
-- *PDS4 data type (ASCII_Short_String_Collapsed, ASCII_Real, ASCII_Date, etc.)*
-- *Definition in complete sentences*
-- *Cardinality (minimum and maximum number of values permitted)*
-- *Nillable, yes or no? Explain when it is appropriate to use a nil value*
-- *Minimum and maximum numeric values, if applicable*
-- *Minimum and maximum number of characters, if applicable*
-- *List of valid values, if applicable.*
+[psyche:imager_instrument_id](#imager_instrument_id) - This attribute contains the enumerated imager ID for the observation.
 
-# Examples
-
-*Give one or more examples of label snippets for real products, annotated as appropriate. 
-Make sure the examples can be successfully validated using the latest version of the PDS4 
-core dictionary and, of course, the dictionary described in this document.*
