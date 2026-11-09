@@ -1,26 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.sch"
-  schematypens="http://purl.oclc.org/dsdl/schematron"?>
-  <?xml-model href="https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1H00_1510.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1M00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
   <Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1" 
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xmlns:psyche="http://pds.nasa.gov/pds4/mission/psyche/v1" 
-  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd">
+  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1M00.xsd">
     
   <name>Psyche Mission LDD</name>
-    <ldd_version_id>1.0.0.0</ldd_version_id>
+    <ldd_version_id>1.1.0.0</ldd_version_id>
     <dictionary_type>Mission</dictionary_type>
     <full_name>Ernest Cisneros</full_name>
     <steward_id>ernestcisneros</steward_id>
     <namespace_id>psyche</namespace_id>
-    <last_modification_date_time>2025-01-29T19:28:59Z</last_modification_date_time>
-    
-    <!-- begin class definitions and associated attributes statements -->
+        <comment>
+      The Psyche mission dictionary contains classes and attributes specific
+      to the Psyche spacecraft and its instruments.
+
+      Psyche version 1.1.0.0
+
+      2025-01-29 Completed initial version for flight [Ernest Cisneros]
+      2026-10-29 Addition of Magnetometer and Imager specific attributes.
+                 Imager attributes based on Imager label work by SDC and
+                 Magnetometer attributes were suggested by Matt Wall (MIT/Mag),
+                 as relayed to Lauren Auchterlonie (ASU/SDC). [Ernest Cisneros]
+                 Also added new super-class Psyche_Mission to contain the
+                 Psyche_Parameters, Magnetometer_Parameters and Imager_Parameters
+                 classes.
+    </comment>
+    <last_modification_date_time>2026-10-29T12:15:51Z</last_modification_date_time>
+
+    <!-- Hierachy of classes and attributes
+    <psyche:Psyche_Mission>
+      <psyche:Psyche_Parameters>
+        <psyche:mission_phase_name> </>
+        <psyche:orbit> </>
+        <psyche:release_number> </>
+        <psyche:spacecraft_clock_partition> </>
+        <psyche:spacecraft_clock_start> </>
+        <psyche:spacecraft_clock_stop> </>
+        <psyche:spacecraft_clock_start_corrected> </>
+        <psyche:spacecraft_clock_stop_corrected> </>
+        <psyche:spacecraft_fsw_dictionary_version> </>
+        <psyche:spacecraft_active_flight_computer> </>
+      </psyche:Psyche_Parameters>
+      <psyche:Magnetometer_Parameters>
+        <psyche:magnetometer_instrument_id> </>
+        <psyche:electronics_unit_id> </>
+        <psyche:magnetometer_temperature unit="DegC"> </>
+        <psyche:magnetometer_frequency unit="Hz"> </>
+        <psyche:magnetometer_delay unit="s"> </>
+        <psyche:magnetometer_sampling_frequency unit="Hz"> </>
+      </psyche:Magnetometer_Parameters>
+      <psyche:Imager_Parameters>
+        <psyche:imager_instrument_id> </>
+      </psyche:Imager_Parameters>
+    </psyche:Psyche_Mission>
+    -->
+
+    <!-- beginning of attribute definitions -->
     <DD_Attribute>
         <name>mission_phase_name</name>
         <version_id>1.0</version_id>
-        <local_identifier>psyche.Observation_Information.mission_phase_name</local_identifier>
+        <local_identifier>psyche.mission_phase_name</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Ernest Cisneros</submitter_name>
         <definition>The Psyche Mission phase name.</definition>
@@ -110,7 +151,7 @@
     <DD_Attribute>
         <name>orbit_number</name>
         <version_id>1.0</version_id>
-        <local_identifier>psyche.Observation_Information.orbit_number</local_identifier>
+        <local_identifier>psyche.orbit_number</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Ernest Cisneros</submitter_name>
         <definition>This value denotes the orbit number during orbital operations.</definition>
@@ -123,7 +164,7 @@
     <DD_Attribute>
         <name>release_number</name>
         <version_id>1.0</version_id>
-        <local_identifier>psyche.Observation_Information.release_number</local_identifier>
+        <local_identifier>psyche.release_number</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Ernest Cisneros</submitter_name>
         <definition>This value denotes the release number when a product was published.</definition>
@@ -135,7 +176,7 @@
     <DD_Attribute>
         <name>spacecraft_clock_start</name>
         <version_id>1.0</version_id>
-        <local_identifier>psyche.Observation_Information.spacecraft_clock_start</local_identifier>
+        <local_identifier>psyche.spacecraft_clock_start</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Ernest Cisneros</submitter_name>
         <definition>This value denotes the observation spacecraft clock start (SCLK) recorded.</definition>
@@ -151,7 +192,7 @@
     <DD_Attribute>
         <name>spacecraft_clock_stop</name>
         <version_id>1.0</version_id>
-        <local_identifier>psyche.Observation_Information.spacecraft_clock_stop</local_identifier>
+        <local_identifier>psyche.spacecraft_clock_stop</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Ernest Cisneros</submitter_name>
         <definition>This value denotes the observation spacecraft clock stop (SCLK) recorded.</definition>
@@ -168,7 +209,7 @@
     <DD_Attribute>
         <name>spacecraft_clock_start_corrected</name>
         <version_id>1.0</version_id>
-        <local_identifier>psyche.Observation_Information.spacecraft_clock_start_corrected</local_identifier>
+        <local_identifier>psyche.spacecraft_clock_start_corrected</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Ernest Cisneros</submitter_name>
         <definition>This value denotes the observation spacecraft clock start (SCLK) recorded, corrected for any clock updates.</definition>
@@ -185,7 +226,7 @@
     <DD_Attribute>
         <name>spacecraft_clock_stop_corrected</name>
         <version_id>1.0</version_id>
-        <local_identifier>psyche.Observation_Information.spacecraft_clock_stop_corrected</local_identifier>
+        <local_identifier>psyche.spacecraft_clock_stop_corrected</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Ernest Cisneros</submitter_name>
         <definition>This value denotes the observation spacecraft clock stop (SCLK) recorded, corrected for an clock updates.</definition>
@@ -202,7 +243,7 @@
     <DD_Attribute>
         <name>spacecraft_clock_partition</name>
         <version_id>1.0</version_id>
-        <local_identifier>psyche.Observation_Information.spacecraft_clock_partition</local_identifier>
+        <local_identifier>psyche.spacecraft_clock_partition</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Ernest Cisneros</submitter_name>
         <definition>This value denotes the spacecraft clock partition, tracking any clock resets.</definition>
@@ -215,7 +256,7 @@
     <DD_Attribute>
         <name>spacecraft_fsw_dictionary_version</name>
         <version_id>1.0</version_id>
-        <local_identifier>psyche.Observation_Information.spacecraft_fsw_dictionary_version</local_identifier>
+        <local_identifier>psyche.spacecraft_fsw_dictionary_version</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Ernest Cisneros</submitter_name>
         <definition>This value denotes the version of the spacecraft fsw dictionary in use.</definition>
@@ -224,11 +265,39 @@
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
             <DD_Permissible_Value>
                 <value>5_4_2_1</value>
-                <value_meaning>Version 5.4.2.1 of the Psyche FSW dictionary.</value_meaning>
+                <value_meaning>Version 5.4.2.1 (20230915) of the Psyche FSW dictionary.</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>5_4_2_2</value>
-                <value_meaning>Version 5.4.2.2 of the Psyche FSW dictionary.</value_meaning>
+                <value_meaning>Version 5.4.2.2 (20231030) of the Psyche FSW dictionary.</value_meaning>
+            </DD_Permissible_Value>
+	    <DD_Permissible_Value>
+                <value>6_0_0_4</value>
+                <value_meaning>Version 6.0.0.4 (20240423) of the Psyche FSW dictionary.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>6_0_0_5</value>
+                <value_meaning>Version 6.0.0.5 (20240924) of the Psyche FSW dictionary.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>6_0_0_6</value>
+                <value_meaning>Version 6.0.0.6 (20241106) of the Psyche FSW dictionary.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>6_0_0_7</value>
+                <value_meaning>Version 6.0.0.7 (20250212) of the Psyche FSW dictionary.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>6_0_0_8</value>
+                <value_meaning>Version 6.0.0.8 (20250930) of the Psyche FSW dictionary.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>6_0_0_9</value>
+                <value_meaning>Version 6.0.0.9 (20260210) of the Psyche FSW dictionary.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>7_0_0_9</value>
+                <value_meaning>Version 7.0.0.9 (20260707) of the Psyche FSW dictionary.</value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
@@ -236,7 +305,7 @@
     <DD_Attribute>
         <name>spacecraft_active_flight_computer</name>
         <version_id>1.0</version_id>
-        <local_identifier>psyche.Observation_Information.spacecraft_active_flight_computer</local_identifier>
+        <local_identifier>psyche.spacecraft_active_flight_computer</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Ernest Cisneros</submitter_name>
         <definition>This value denotes the spacecraft pce active and in use.</definition>
@@ -254,6 +323,183 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+    <DD_Attribute>
+        <name>magnetometer_instrument_id</name>
+        <version>1.0</version>
+        <local_identifier>psyche.magnetometer_instrument_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter>Matt Wall</submitter>
+        <definition>This value denotes which magnetometer the data was derived from.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>magnetometer_1</value>
+                <value_meaning>Psyche Magnetometer 1, NAIF ID -255170</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>magnetometer_2</value>
+                <value_meaning>Psyche Magnetometer 2, NAIF ID -255180</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>electronics_unit_id</name>
+        <version>1.0</version>
+        <local_identifier>psyche.electronics_unit_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter>Matt Wall</submitter>
+        <definition>This value denotes the magnetometer electronics unit in use.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>EU_1</value>
+                <value_meaning>Psyche Magnetometer Electronics Unit 1</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>EU_2</value>
+                <value_meaning>Psyche Magnetometer Electronics Unit 2</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>magnetometer_temperature</name>
+        <version>1.0</version>
+        <local_identifier>psyche.magnetometer_temperature</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter>Matt Wall</submitter>
+        <definition>This values denotes the temperature of the indicated magnetometer during data collection.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>magnetometer_frequency</name>
+        <version>1.0</version>
+        <local_identifier>psyche.magnetometer_frequency</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter>Matt Wall</submitter>
+        <definition>This values denotes the operating frequency of the indicated magnetometer during data collection.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>magnetometer_delay</name>
+        <version>1.0</version>
+        <local_identifier>psyche.magnetometer_delay</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter>Matt Wall</submitter>
+        <definition>This value denotes the delay used for the indicated magnetometer during data collection.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>magnetometer_sampling_frequency</name>
+        <version>1.0</version>
+        <local_identifier>psyche.magnetometer_sampling_frequency</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter>Matt Wall</submitter>
+        <definition>This value denotes the sampling fequency for the indicated magnetometer during data collection.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>imager_instrument_id</name>
+        <version>1.0</version>
+        <local_identifier>psyche.imager_instrument_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter>Ernest Cisneros</submitter>
+        <definition>This values denotes the Imager an observations was acquired from.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>imager_a</value>
+                <value_meaning>Psyche Multispectral Imager A, NAIF ID -255110</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>imager_b</value>
+                <value_meaning>Psyche Multispectral Imager B, NAIF ID -255130</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    <!-- end of attribute definitions -->
+
+    <!-- begin class definitions and associated attributes statements -->
+    <DD_Class>
+        <name>Magnetometer_Parameters</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psyche.Magnetometer_Parameters</local_identifier>
+        <submitter_name>Ernest Cisneros</submitter_name>
+        <definition>Class for Psyche Magnetometer instrument related values.</definition>
+        <element_flag>true</element_flag>
+        <DD_Association>
+            <identifier_reference>psyche.magnetometer_instrument_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>psyche.electronics_unit_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>psyche.magnetometer_temperature</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>psyche.magnetometer_frequency</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>psyche.magnetometer_delay</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>psyche.magnetometer_sampling_frequency</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+    <DD_Class>
+        <name>Imager_Parameters</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psyche.Imager_Parameters</local_identifier>
+        <submitter_name>Ernest Cisneros</submitter_name>
+        <definition>Class for Psyche Imager instrument related values.</definition>
+        <element_flag>true</element_flag>
+        <DD_Association>
+            <identifier_reference>psyche.imager_instrument_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+	</DD_Association>
+    </DD_Class>
+
     <DD_Class>
         <name>Psyche_Parameters</name>
         <version_id>1.0</version_id>
@@ -262,62 +508,90 @@
         <definition>Class for Psyche related values.</definition>
         <element_flag>true</element_flag>
         <DD_Association>
-            <identifier_reference>psyche.Observation_Information.mission_phase_name</identifier_reference>
+            <identifier_reference>psyche.mission_phase_name</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>psyche.Observation_Information.orbit_number</identifier_reference>
+            <identifier_reference>psyche.orbit_number</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>psyche.Observation_Information.release_number</identifier_reference>
+            <identifier_reference>psyche.release_number</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>psyche.Observation_Information.spacecraft_clock_start</identifier_reference>
+            <identifier_reference>psyche.spacecraft_clock_start</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>psyche.Observation_Information.spacecraft_clock_stop</identifier_reference>
+            <identifier_reference>psyche.spacecraft_clock_stop</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>psyche.Observation_Information.spacecraft_clock_start_corrected</identifier_reference>
+            <identifier_reference>psyche.spacecraft_clock_start_corrected</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>psyche.Observation_Information.spacecraft_clock_stop_corrected</identifier_reference>
+            <identifier_reference>psyche.spacecraft_clock_stop_corrected</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>psyche.Observation_Information.spacecraft_clock_partition</identifier_reference>
+            <identifier_reference>psyche.spacecraft_clock_partition</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>psyche.Observation_Information.spacecraft_fsw_dictionary_version</identifier_reference>
+            <identifier_reference>psyche.spacecraft_fsw_dictionary_version</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>psyche.Observation_Information.spacecraft_active_flight_computer</identifier_reference>
+            <identifier_reference>psyche.spacecraft_active_flight_computer</identifier_reference>
             <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+
+    <DD_Class>
+	<name>Psyche_Mission</name>
+	<version_id>1.0</version_id>
+	<local_identifier>psyche.Psyche_Mission</local_identifier>
+	<submitter_name>Ernest Cisneros</submitter_name>
+	<definition>Superclass to contain Psyche spacecraft and instrument paramenters</definition>
+	<element_flag>true</element_flag>
+        <DD_Association>
+            <identifier_reference>psyche.Psyche_Parameters</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>psyche.Magnetometer_Parameters</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>psyche.Imager_Parameters</identifier_reference>
+            <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
